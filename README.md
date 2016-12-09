@@ -32,3 +32,12 @@ O jogo é simples e está alinhado a margem superior esquerda, no intuito de dis
                              """"* RL       d&gt;                    
                                     "$u.   .$                     
                                       ^"*bo@" tony
+
+
+## Introdução
+
+Script para estudar a lógia de games web em JavaScript Orientado à  Objeto
+
+> Tela de splash (estática)
+> Tela de Game Over
+> Scores
