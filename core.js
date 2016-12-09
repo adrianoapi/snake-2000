@@ -18,11 +18,26 @@ function play() {
 }
 
 function finish() {
+
+    ctx.fillStyle = '#195D00';
+    ctx.font = "bold 55px Verdana";
+    ctx.fillText('S  N  A  K  E', 38, 256.5);
+
+    //Desenha o captcha do score
+    var x = 40, y = 201.5, n = 30, q = 4
+    for (var i = 0; i < 1; i++) {
+        draw_cptcha(x, y, n, q, set_color());
+        x += 4;
+    }
+
     ctx.fillStyle = 'black';
     ctx.strokeStyle = 'white';
     ctx.font = "bold 50px Verdana";
     ctx.fillText('Game Over', 55, 190);
     ctx.strokeText('Game Over', 55, 190);
+    ctx.fillStyle = 'white';
+    ctx.font = "40px Verdana";
+    ctx.fillText("Score: " + score, 55, 250);
     set_score();
     game_over = true;
 }
@@ -173,35 +188,82 @@ function set_score() {
     ctx.fillText(score_max_text, 300, h - 5);
 }
 
+
+function draw_cptcha(x, y, n, q, color) {
+    for (var i = 0; i < n; i++) {
+        ctx.fillStyle = color[i];
+        var some = 10;
+        for (var j = 0; j < 6; j++) {
+            ctx.fillRect(x, y + some, q, q);
+            some += 10;
+        }
+        x += 12;
+    }
+}
+
+function set_color() {
+    var arr = [
+        '#ffff66',
+        '#ffcc99',
+        '#ff9999',
+        '#ff6699',
+        '#ff33cc',
+        '#cc00cc',
+        '#9900cc',
+        '#6600cc',
+        '#9900ff',
+        '#6600ff',
+        '#3366ff',
+        '#0099ff',
+        '#0066cc',
+        '#0099cc',
+        '#336699',
+        '#003366',
+        '#006666',
+        '#009999',
+        '#00cc99',
+        '#00ff99',
+        '#99ff99',
+        '#ccff99',
+        '#ffff00',
+        '#ffcc00',
+        '#ff9933',
+        '#ff6600',
+        '#ff0000',
+        '#990000'
+    ];
+    return arr;
+}
+
 $(document).ready(function () {
     ctx.fillStyle = 'black';
     ctx.strokeStyle = 'chartreuse';
     ctx.font = "bold 50px Verdana";
     ctx.fillText('SNAKE', 55, 90);
     ctx.strokeText('SNAKE', 55, 90);
-    
-    ctx.fillText('>2000', 55, 135);
-    ctx.strokeText('>2000', 55, 135);
-    
-    
+
+    ctx.fillText('>-2000', 55, 135);
+    ctx.strokeText('>-2000', 55, 135);
+
+
     ctx.fillStyle = 'chartreuse';
     ctx.strokeStyle = 'white';
     ctx.font = "bold 16px Verdana";
 
-ctx.fillText('                         __ ', 55, 190);
-ctx.fillText('           ---_ ...... _/_ -   ', 55, 200);
-ctx.fillText('          /  .      ./ .\'*\ \    ', 55, 210);
-ctx.fillText('          : \'         /__-\'   \. ', 55, 220);
-ctx.fillText('         /                      )', 55, 230);
-ctx.fillText('       _/                  >   .\' ', 55, 240);
-ctx.fillText('     /   \'   .       _.-" /  .\'   ', 55, 250);
-ctx.fillText('     \           __/"     /.\'    ', 55, 260);
-ctx.fillText('      \ \'--  .-" /     //\'', 55, 270);
-ctx.fillText('        \|  \ | /     // ', 55, 280);
-ctx.fillText('             \:     //', 55, 290);
-ctx.fillText('          `\/     //', 55, 300);
-ctx.fillText("           \__`\/ /  ASH", 55, 310);
-ctx.fillText('               \_|', 55, 320);
+    ctx.fillText('                         __ ', 55, 190);
+    ctx.fillText('           ---_ ...... _/_ -   ', 55, 200);
+    ctx.fillText('          /  .      ./ .\'*\ \    ', 55, 210);
+    ctx.fillText('          : \'         /__-\'   \. ', 55, 220);
+    ctx.fillText('         /                      )', 55, 230);
+    ctx.fillText('       _/                  >   .\' ', 55, 240);
+    ctx.fillText('     /   \'   .       _.-" /  .\'   ', 55, 250);
+    ctx.fillText('     \           __/"     /.\'    ', 55, 260);
+    ctx.fillText('      \ \'--  .-" /     //\'', 55, 270);
+    ctx.fillText('        \|  \ | /     // ', 55, 280);
+    ctx.fillText('             \:     //', 55, 290);
+    ctx.fillText('          `\/     //', 55, 300);
+    ctx.fillText("           \__`\/ /  ASH", 55, 310);
+    ctx.fillText('               \_|', 55, 320);
 
 //ctx.fillText('                                             .o@*hu   ', 55, 100);
 //ctx.fillText('                      ..      .........   .u*"    ^Rc         ', 55, 110);
