@@ -3,8 +3,6 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var w = $("#canvas").width();
 var h = $("#canvas").height();
-
-//Variável que define a larguara de um poligono
 var cw = 10;
 var direction;
 var food;
@@ -12,8 +10,12 @@ var score = 0;
 var score_last = 0;
 var score_max = 0;
 var game_over = false;
+var snake_array = [];
 
-var snake_array;
+
+function play() {
+    init();
+}
 
 function finish() {
     ctx.fillStyle = 'black';
@@ -40,7 +42,6 @@ function init() {
         clearInterval(game_loop);
     game_loop = setInterval(paint, 60);
 }
-init();
 
 function create_snake()
 {
@@ -62,7 +63,6 @@ function create_food()
     };
     //Define um limite para a aparicação da comida
     food.y = (food.y > 42) ? 42 : food.y;
-
     //Isto irá criar uma célula com x / y entre 0-44
     //Porque há 45(450/10) posições entre as linhas e colunas
 }
@@ -75,11 +75,9 @@ function paint()
     ctx.fillRect(0, 0, w, h);
     ctx.strokeStyle = "black";
     ctx.strokeRect(0, 0, w, h);
-
     //Movimento para a cobra vir aqui
     var nx = snake_array[0].x;
     var ny = snake_array[0].y;
-
     if (direction == "right")
         nx++;
     else if (direction == "left")
@@ -88,7 +86,6 @@ function paint()
         ny--;
     else if (direction == "down")
         ny++;
-
     //Permite adicionar o jogo sobre cláusulas agora
     if (nx == -1 || nx == w / cw || ny == -1 || ny == h / cw || check_collision(nx, ny, snake_array))
     {
@@ -113,7 +110,6 @@ function paint()
     //A cobra agora pode comer a comida
     //Recoloca a cauda como a primeira célula
     snake_array.unshift(tail);
-
     for (var i = 0; i < snake_array.length; i++)
     {
         var c = snake_array[i];
@@ -139,7 +135,7 @@ function check_collision(x, y, array)
     //Verifica se x/y existe em uma matriz de células
     for (var i = 0; i < array.length; i++)
     {
-        if (array[i].x == x && array[i].y == y)
+        if (array[i].x == x && array[i].y == 44)
             return true;
     }
     return false;
@@ -176,3 +172,11 @@ function set_score() {
     var score_max_text = "Max Score: " + score_max;
     ctx.fillText(score_max_text, 300, h - 5);
 }
+
+$(document).ready(function () {
+    ctx.fillStyle = 'black';
+    ctx.strokeStyle = 'white';
+    ctx.font = "bold 50px Verdana";
+    ctx.fillText('Snake', 55, 190);
+    ctx.strokeText('Snake', 55, 190);
+});
