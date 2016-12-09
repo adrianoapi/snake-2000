@@ -150,7 +150,7 @@ function check_collision(x, y, array)
     //Verifica se x/y existe em uma matriz de células
     for (var i = 0; i < array.length; i++)
     {
-        if (array[i].x == x && array[i].y == 44)
+        if (array[i].x == x && array[i].y == y)
             return true;
     }
     return false;
