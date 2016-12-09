@@ -175,8 +175,59 @@ function set_score() {
 
 $(document).ready(function () {
     ctx.fillStyle = 'black';
-    ctx.strokeStyle = 'white';
+    ctx.strokeStyle = 'chartreuse';
     ctx.font = "bold 50px Verdana";
-    ctx.fillText('Snake', 55, 190);
-    ctx.strokeText('Snake', 55, 190);
+    ctx.fillText('SNAKE', 55, 90);
+    ctx.strokeText('SNAKE', 55, 90);
+    
+    ctx.fillText('>2000', 55, 135);
+    ctx.strokeText('>2000', 55, 135);
+    
+    
+    ctx.fillStyle = 'chartreuse';
+    ctx.strokeStyle = 'white';
+    ctx.font = "bold 16px Verdana";
+
+ctx.fillText('                         __ ', 55, 190);
+ctx.fillText('           ---_ ...... _/_ -   ', 55, 200);
+ctx.fillText('          /  .      ./ .\'*\ \    ', 55, 210);
+ctx.fillText('          : \'         /__-\'   \. ', 55, 220);
+ctx.fillText('         /                      )', 55, 230);
+ctx.fillText('       _/                  >   .\' ', 55, 240);
+ctx.fillText('     /   \'   .       _.-" /  .\'   ', 55, 250);
+ctx.fillText('     \           __/"     /.\'    ', 55, 260);
+ctx.fillText('      \ \'--  .-" /     //\'', 55, 270);
+ctx.fillText('        \|  \ | /     // ', 55, 280);
+ctx.fillText('             \:     //', 55, 290);
+ctx.fillText('          `\/     //', 55, 300);
+ctx.fillText("           \__`\/ /  ASH", 55, 310);
+ctx.fillText('               \_|', 55, 320);
+
+//ctx.fillText('                                             .o@*hu   ', 55, 100);
+//ctx.fillText('                      ..      .........   .u*"    ^Rc         ', 55, 110);
+//ctx.fillText('                    oP""*Lo*#"""""""""""7d" .d*N.   $  ', 55, 120);
+//ctx.fillText('                   @  u@""           .u*" o*"   #L  ?b  ', 55, 130);
+//ctx.fillText('                  @   "              " .d"  .d@@e$   ?b.  ', 55, 140);
+//ctx.fillText('                 8                    @*@me@#         \'"Nu    ', 55, 150);
+//ctx.fillText('                @                                        \'#b  ', 55, 160);
+//ctx.fillText('              .P                                           $r ', 55, 170);
+//ctx.fillText('            .@"                                  $L        $  ', 55, 180);
+//ctx.fillText('          .@"                                   8"R      dP  ', 55, 190);
+//ctx.fillText('       .d#"                                  .dP d"   .d#  ', 55, 200);
+//ctx.fillText('      xP              .e                 .ud#"  dE.o@"(  ', 55, 210);
+//ctx.fillText('      $             s*"              .u@*""     \'""\dP"   ', 55, 220);
+//ctx.fillText('      ?L  ..                    ..o@""        .$  uP ', 55, 230);
+//ctx.fillText('       #c:$"*u.             .u@*""$          uR .@" ', 55, 240);
+//ctx.fillText('        ?L$. \'"""***Nc    x@""   @"         d" JP   ', 55, 250);
+//ctx.fillText('         ^#$.        #L  .$     8"         d" d"     ', 55, 260);
+//ctx.fillText('           \'          "b.\'$.   @"         $" 8" ', 55, 270);
+//ctx.fillText('                       \'"*@$L $"         $  @ ', 55, 280);
+//ctx.fillText('                       @L    $"         d" 8\  ', 55, 290);
+//ctx.fillText('                       $$u.u$"         dF dF  ', 55, 300);
+//ctx.fillText('                       $ """   o      dP xR ', 55, 310);
+//ctx.fillText('                       $      dFNu...@"  $ ', 55, 320);
+//ctx.fillText('                       "N..   ?B ^"""   :R  ', 55, 330);
+//ctx.fillText('                         """"* RL       d&gt; ', 55, 340);
+//ctx.fillText('                                "$u.   .$ ', 55, 350);
+//ctx.fillText('                                  ^"*bo@" tony', 55, 360);
 });
