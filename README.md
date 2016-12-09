@@ -37,5 +37,7 @@ O jogo é simples e está alinhado a margem superior esquerda, no intuito de dis
 ## Introdução
 
 > Tela de splash (estática)
+
 > Tela de Game Over
+
 > Scores
