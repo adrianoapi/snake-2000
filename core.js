@@ -16,10 +16,11 @@ var game_over = false;
 var snake_array;
 
 function finish() {
-    ctx.fillStyle = "black";
-    ctx.font = "bold 40px Verdana";
-    var text = "Game Over";
-    ctx.fillText(text, 70, 150);
+    ctx.fillStyle = 'black';
+    ctx.strokeStyle = 'white';
+    ctx.font = "bold 50px Verdana";
+    ctx.fillText('Game Over', 55, 190);
+    ctx.strokeText('Game Over', 55, 190);
     set_score();
     game_over = true;
 }
@@ -166,7 +167,7 @@ function set_score() {
     //(pos esq),(cima baixo),(esq comprimento),(largura)
     ctx.fillRect(0, 430, 450, 20);
     //Exibe os scores
-    ctx.fillStyle = "white";
+    ctx.fillStyle = "yellow";
     ctx.font = "12px Verdana";
     var score_text = "Score: " + score;
     ctx.fillText(score_text, 5, h - 5);
